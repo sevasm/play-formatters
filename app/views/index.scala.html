@@ -1,0 +1,13 @@
+@(form: Form[controllers.IntegerDto], integer: Option[String])
+
+@views.html.main {
+    @integer.fold(HtmlFormat.empty) { i =>
+        <h1>Submitted the following integer</h1>
+        <p>@i</p>
+    }
+    <h1>Submit integer</h1>
+    @helper.form(action = routes.IntegerController.save) {
+        @helper.inputText(field = form("integer"))
+        <input type="submit" value="Submit">
+    }
+}

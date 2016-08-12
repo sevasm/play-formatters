@@ -1,0 +1,12 @@
+Play application to illustrate issue with using play.data.format.Formatters#parse(java.lang.reflect.Field, java.lang.String, java.lang.Class) in Play 2.5.4
+=================================
+
+No additional configuration needed to run
+
+Access application by navigating to http://localhost:9000 after application is started
+
+Click Submit and an exception will be thrown
+
+A work-around is possible by creating a subclass of play.data.format.Formatters and overriding the method in question (see class format.FormattersFixed)
+
+To enable the work-around, edit application.conf and replace the inject.FormatterModule module with the inject.FormatterModuleFixed module

@@ -1,0 +1,2 @@
+GET     /                           controllers.IntegerController.index
+POST    /save                       controllers.IntegerController.save
